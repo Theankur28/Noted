@@ -8,7 +8,11 @@ dotenv.config();
 
 const mongoose = require("mongoose");
 // Connecting to database
-mongoose.connect(process.env.ATLAS_URI);
+const MONGO_USER = "ankur_028";
+const MONGO_PASS = "ankurpurohit@28";
+const MONGO_CLUSTER = "cluster0.v6df8xl.mongodb.net";
+const MONGO_URI = `mongodb+srv://${encodeURIComponent(MONGO_USER)}:${encodeURIComponent(MONGO_PASS)}@${MONGO_CLUSTER}/noted-app-main`;
+mongoose.connect(MONGO_URI);
 mongoose.connection.once("open", () => {
   console.log("Connected to the database!");
 });
