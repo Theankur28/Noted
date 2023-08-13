@@ -1,0 +1,319 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Noty js */
+@import 'noty/lib/noty.css';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --first-color: #0de3cae3;
+  --text-color: white;
+  --dark-color: #13c2ae;
+}
+
+/* For scrollbar at right */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #3b3838;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+}
+
+/* For Main Page/Welcome Page */
+.welcome-page {
+  background: linear-gradient(125deg, var(--first-color), rgba(0, 0, 0, 0.9));
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.welcome-page .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .title {
+  margin-block: 2rem;
+  font-size: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  gap: 3rem;
+  width: fit-content;
+  text-align: center;
+}
+
+.button {
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 2px 2px 4px -2px rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
+  cursor: pointer;
+  margin-right: 2rem;
+  transition: all 0.3s;
+}
+
+.button.login {
+  background: var(--first-color);
+}
+
+.button.login:hover {
+  background: var(--dark-color);
+}
+
+.button.signup {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.button.signup:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.welcome-page img {
+  width: 40%;
+  transform: skew(8deg, -5deg);
+}
+
+/* For Header Component */
+header {
+  background-color: var(--first-color);
+  padding: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+header p {
+  text-align: center;
+}
+
+header a,
+.auth-form button {
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  border: none;
+  width: 120px;
+  font-size: 1rem;
+  text-align: center;
+  background: var(--dark-color);
+  box-shadow: 2px 2px 4px -2px black;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+header a:hover {
+  transform: scale(0.975);
+  box-shadow: 2px 2px 4px -1px black;
+}
+
+
+/* Footer Component */
+footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 1.5rem;
+}
+
+footer p {
+  color: #ccc;
+}
+
+.notes-container {
+  width: 100%;
+  height: 59vh;
+  overflow: scroll;
+}
+
+/* For Note Component */
+.note {
+  background: #00ffe1c7;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 7px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.note button {
+  position: relative;
+  float: right;
+  color: #0de3cae3;
+  border: none;
+  width: 27.5px;
+  height: 27.5px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* CreateArea Component */
+form.create-note {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+
+form.create-note button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #0de3cae3;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+
+form.create-note button:hover {
+  transform: scale(0.95) !important;
+  background: var(--first-color) !important;
+  box-shadow: 1px 1px 3px -1px black !important;
+}
+
+.auth-form {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-form input {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  outline: none;
+  font-size: 1em;
+  border-radius: 7px;
+  margin-bottom: 7px;
+  font-family: inherit;
+  resize: none;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.auth-form a {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.auth-form button {
+  margin-top: 15px;
+  width: 150px;
+}
+
+.auth-form button:hover {
+  transform: scale(0.96);
+}
+
+
+@media screen and (max-width: 1100px) {
+  .content .title {
+    font-size: 2rem;
+  }
+
+  /* .welcome-page .content {
+    height: 90%;
+  } */
+}
+
+@media screen and (max-width: 991px) {
+  .welcome-page .content {
+    flex-direction: column !important;
+    margin-top: 3rem;
+    justify-content: center;
+    gap: 5rem;
+    height: 100%;
+    align-items: center;
+  }
+  .welcome-page img{
+    width: 50vh;
+  }
+}
+@media screen and (max-width: 425px) {
+  .welcome-page .content{
+    width: 100%;
+  }
+}
